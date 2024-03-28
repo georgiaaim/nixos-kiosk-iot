@@ -2,17 +2,14 @@
   "nodes": {
     "home-manager": {
       "inputs": {
-        "nixpkgs": [
-          "kioskBase",
-          "nixpkgs"
-        ]
+        "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1710164657,
-        "narHash": "sha256-l64+ZjaQAVkHDVaK0VHwtXBdjcBD6nLBD+p7IfyBp/w=",
+        "lastModified": 1711625603,
+        "narHash": "sha256-W+9dfqA9bqUIBV5u7jaIARAzMe3kTq/Hp2SpSVXKRQw=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "017b12de5b899ef9b64e2c035ce257bfe95b8ae2",
+        "rev": "c0ef0dab55611c676ad7539bf4e41b3ec6fa87d2",
         "type": "github"
       },
       "original": {
@@ -23,17 +20,19 @@
     },
     "kioskBase": {
       "inputs": {
-        "home-manager": "home-manager",
+        "home-manager": [
+          "home-manager"
+        ],
         "nixpkgs": [
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1711580523,
-        "narHash": "sha256-TsR5khKg20EtqKURU8AOBsFAogT5YT9S5izBtW4x6pY=",
+        "lastModified": 1711638128,
+        "narHash": "sha256-S4ak4VZgZOAaGu2mTbTX1vNrSvs46xgQ4hE0245Crjw=",
         "owner": "georgiaaim",
         "repo": "nixos-kiosk-base",
-        "rev": "6f6aac125b068e5a7f654aa8bcbf0947bed8ca5f",
+        "rev": "079ff9c3836728b9b9aadfd046690d737636ed9c",
         "type": "github"
       },
       "original": {
@@ -43,6 +42,22 @@
       }
     },
     "nixpkgs": {
+      "locked": {
+        "lastModified": 1710806803,
+        "narHash": "sha256-qrxvLS888pNJFwJdK+hf1wpRCSQcqA6W5+Ox202NDa0=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "b06025f1533a1e07b6db3e75151caa155d1c7eb3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
       "locked": {
         "lastModified": 1711523803,
         "narHash": "sha256-UKcYiHWHQynzj6CN/vTcix4yd1eCu1uFdsuarupdCQQ=",
@@ -60,8 +75,9 @@
     },
     "root": {
       "inputs": {
+        "home-manager": "home-manager",
         "kioskBase": "kioskBase",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs_2"
       }
     }
   },
