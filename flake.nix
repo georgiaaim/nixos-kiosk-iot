@@ -13,9 +13,9 @@
       modules = [
         kioskBase.nixosModules.baseEnvironment
         ./hardware-configuration.nix # The consumer's specific hardware configuration
-        ({ pkgs, lib, ... }: {
-          # Any additional system-specific configuration
+        ({ pkgs, lib, home-manager, ... }: {
           networking.hostName = lib.mkForce "IOTVignette";
+
           home-manager.users.kioskadmin.home.file."backup.tar".source = ./HA_Vignette_Backup.tar;
         })
       ];
