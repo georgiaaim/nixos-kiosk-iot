@@ -7,7 +7,7 @@
     kioskBase.inputs.home-manager.follows = "home-manager";
   };
 
-  outputs = { self, nixpkgs, home-manager, kioskBase, ... }: {
+  outputs = { self, nixpkgs, home-manager, kioskBase }: {
     nixosConfigurations.IOTVignette = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
