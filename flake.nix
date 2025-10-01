@@ -1,7 +1,7 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    home-manager.url = "github:nix-community/home-manager/release-25.05";
     kioskBase.url = "github:georgiaaim/nixos-kiosk-base"; # Adjust the URL/path to your flake
     kioskBase.inputs.nixpkgs.follows = "nixpkgs";
     kioskBase.inputs.home-manager.follows = "home-manager";
