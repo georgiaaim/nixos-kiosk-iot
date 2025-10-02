@@ -8,7 +8,7 @@
   ];
 
   # Bring your layout in at eval time (no /etc copy needed)
-  disko.devices = import (inputs.self + /disks.nix) { inherit lib; };
+  disko.devices = import (inputs.kioskBase + /disks.nix) { inherit lib; };
 
   # Make Disko + common FS tools available on the ISO
   environment.systemPackages = with pkgs; [
