@@ -7,6 +7,9 @@
     inputs.disko.nixosModules.disko
   ];
 
+  # Bring your layout in at eval time (no /etc copy needed)
+  disko.devices = import (inputs.self + /disks.nix) { inherit lib; };
+
   # Make Disko + common FS tools available on the ISO
   environment.systemPackages = with pkgs; [
     disko               # provides `disko` and `disko-install`
@@ -21,18 +24,7 @@
     curl cacert
   ];
 
-  # If your disk layout lives in ../disks.nix, you can either:
-  #
-  # A) import it as a function (recommended if your disks.nix expects {lib,...}):
-  # disko.devices = import ../disks.nix { inherit lib; };
-  #
-  # or
-  #
-  # B) just copy it into the ISO and reference that path at install time:
-  environment.etc."disko-layout.nix".source = ../disks.nix;
-
   # Helpful quality-of-life on the live ISO
-  users.users.nixos.initialPassword = ""; # empty password for live user
   services.getty.autologinUser = lib.mkDefault "nixos";
   security.sudo.enable = true;
   security.sudo.wheelNeedsPassword = false;
