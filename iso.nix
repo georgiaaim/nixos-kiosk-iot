@@ -5,10 +5,8 @@
   # Pull in Disko’s NixOS module on the ISO
   imports = [
     inputs.disko.nixosModules.disko
+    (inputs.kioskBase + /disks.nix)
   ];
-
-  # Bring your layout in at eval time (no /etc copy needed)
-  disko.devices = import (inputs.kioskBase + /disks.nix) { inherit lib; };
 
   # Make Disko + common FS tools available on the ISO
   environment.systemPackages = with pkgs; [
