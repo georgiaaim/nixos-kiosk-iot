@@ -5,13 +5,13 @@
     kioskBase.url = "github:georgiaaim/nixos-kiosk-base"; # Adjust the URL/path to your flake
     kioskBase.inputs.nixpkgs.follows = "nixpkgs";
     kioskBase.inputs.home-manager.follows = "home-manager";
-    nixos-generators.url = "github:nix-community/nixos-generators";
-    nixos-generators.inputs.nixpkgs.follows = "nixpkgs";
+    "nixos-generators".url = "github:nix-community/nixos-generators";
+    "nixos-generators".inputs.nixpkgs.follows = "nixpkgs";
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, kioskBase }: {
+  outputs = inputs@{ self, nixpkgs, home-manager, kioskBase, nixos-generators, ... }: {
     nixosConfigurations.IOTVignette = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
@@ -22,7 +22,7 @@
         })
       ];
     };
-    packages.x86_64-linux.iso = inputs.nixos-generators.nixosGenerate {
+    packages.x86_64-linux.iso = inputs."nixos-generators".nixosGenerate {
       system = "x86_64-linux";
       format = "install-iso";
       specialArgs = {
