@@ -71,11 +71,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1761337581,
-        "narHash": "sha256-zcYNeRc0sX9gBT6t3zIlfEcvSiYSjOJYVdNciV5W0y0=",
+        "lastModified": 1761339166,
+        "narHash": "sha256-w6vwa0Zg84Ct0s4nYSpfNDa2eW3XourmZeOjtbkWFcI=",
         "owner": "georgiaaim",
         "repo": "nixos-kiosk-base",
-        "rev": "a6e3150519b537cc1fc4e127ce87949d4e24a2f2",
+        "rev": "567978851cbeea7b2c227aef738f27efbb6c9de4",
         "type": "github"
       },
       "original": {
